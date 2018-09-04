@@ -11,12 +11,14 @@
 #import "CoreLocation/CoreLocation.h"
 
 
-@interface ViewController ()
+@interface ViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *reverseGeocodeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *pinIcon;
+
+@property (assign, nonatomic) BOOL lookUp;
 
 @end
 
@@ -27,14 +29,22 @@
     self.geocoder = [[CLGeocoder alloc] init];
     self.reverseGeocodeLabel.text = nil;
     self.reverseGeocodeLabel.alpha = 0.5;
+    self.lookUp = NO;
     
 }
 
-- (IBAction)reverseGeocodeTapped:(id)sender {
-    CLLocationCoordinate2D coord = [self locationAtCenterOfMapView];
-    CLLocation *loc = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
-    [self startReverseGeocodeLocation:loc];
+-(void) executeTheLookUp {
+    if(self.lookUp == NO){
+        self.lookUp = YES;
+        CLLocationCoordinate2D coord = [self locationAtCenterOfMapView];
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
+        [self startReverseGeocodeLocation:loc];
+    }
     
+}
+
+-(void) mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    [self executeTheLookUp];
 }
 
 #pragma mark - Private
@@ -69,6 +79,7 @@
          }
          self.reverseGeocodeLabel.text =[[ mappedPlaceDescs allObjects] componentsJoinedByString:@"\n"];
          self.reverseGeocodeLabel.alpha = 1.0;
+         self.lookUp = NO;
      }];
 }
 

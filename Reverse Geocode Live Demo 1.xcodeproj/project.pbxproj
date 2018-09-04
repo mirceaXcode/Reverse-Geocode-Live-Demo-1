@@ -13,6 +13,7 @@
 		0844CFDA213F196F007B6057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0844CFD9213F196F007B6057 /* Assets.xcassets */; };
 		0844CFDD213F196F007B6057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0844CFDB213F196F007B6057 /* LaunchScreen.storyboard */; };
 		0844CFE0213F196F007B6057 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0844CFDF213F196F007B6057 /* main.m */; };
+		0844CFE8213F1AE7007B6057 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0844CFE7213F1AE7007B6057 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0844CFDC213F196F007B6057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0844CFDE213F196F007B6057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0844CFDF213F196F007B6057 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0844CFE7213F1AE7007B6057 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0844CFE8213F1AE7007B6057 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				0844CFCF213F196D007B6057 /* Reverse Geocode Live Demo 1 */,
 				0844CFCE213F196D007B6057 /* Products */,
+				0844CFE6213F1AE6007B6057 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +73,14 @@
 				0844CFDF213F196F007B6057 /* main.m */,
 			);
 			path = "Reverse Geocode Live Demo 1";
+			sourceTree = "<group>";
+		};
+		0844CFE6213F1AE6007B6057 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0844CFE7213F1AE7007B6057 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N264L7YLRX;
 				INFOPLIST_FILE = "Reverse Geocode Live Demo 1/Info.plist";
@@ -300,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N264L7YLRX;
 				INFOPLIST_FILE = "Reverse Geocode Live Demo 1/Info.plist";
